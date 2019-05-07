@@ -1,0 +1,50 @@
+{
+    "title": "paccurate.io",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/paccurate.io/0.1.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://api.paccurate.io/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "post_": {
+            "main": "./lib/actions/post_.js",
+            "title": "a pure-JSON endpoint for packing requests.\n",
+            "description": "a pure-JSON endpoint for packing requests.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
